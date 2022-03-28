@@ -1,4 +1,4 @@
-Translation of the Python Documentation — fa
+ترجمه مستندات پایتون — fa
 ============================================
 
 .. image:: https://travis-ci.org/python/python-docs-fa.svg?branch=3.7
@@ -28,95 +28,93 @@ You signify acceptance of this agreement by submitting your work to
 the PSF for inclusion in the documentation.
 
 
-Contributing to the Translation
+مشارکت در ترجمه
 -------------------------------
 
-How to Contribute
+چگونه مشارکت کنیم؟
 ~~~~~~~~~~~~~~~~~
 
-You can contribute using:
+شما برای مشارکت در ترجمه میتوانید از موارد زیر استفاده کنید:
 
-- Github
-- `transifex <https://www.transifex.com/python-doc/public/>`_
-- Or just by opening `an issue on github <https://github.com/python/python-docs-fafr/issues>`_
+- گیت هاب
+- یا فقط `یک ایشو در گیت‌هاب <https://github.com/mmdbalkhi/python-docs-fa/issues>`_ باز کنید.
 
 
-Contributing using Github
+مشارکت با استفاده از گیت هاب
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Prerequisites:
+پیش‌نیاز ها:
 
-- A `github account <https://github.com/join>`_.
-- ``git`` `installed <https://help.github.com/articles/set-up-git/>`_ (for windows, see
+- یک `حساب کاربری گیت‌هاب <https://github.com/join>`_.
+- ``git`` `نصب شده داشته باشید <https://help.github.com/articles/set-up-git/>`_ (برای ویندوز, این را ببینید
   https://gitforwindows.org/).
-- A ``.po`` file editor (Use `poedit <https://poedit.net/>`_
-  if you don't already have one).
+- یک ادیتور فایل``.po`` (اگر هنوز گزینه ای را انتخاب نکرده اید، میتوانید از
+`poedit <https://poedit.net/>`_ استفاده کنید).
 
 
-Let's start:
+بیاین شروع کنیم:
 
-You'll need to fork the `python-docs-fa
-<https://github.com/python/python-docs-fa>`_ clicking its ``Fork``
-button. This creates a copy of the whole project on your github
-account: a place where you have the rights to do modifications.
+شما به یک فورک از  `python-docs-fa
+<https://github.com/python/python-docs-fa>`_ نیاز دارید. بر روی دکمه ``Fork``
+کلیک کنید. این یک کپی از کل پروژه را در حساب کاربری گیت‌هاب شما ایجاد میکند. 
+اینجا جایی است که شما میتوانید در آن تغییر ایجاد کنید.
 
-Step by step:
+گام به گام:
 
 .. code-block:: bash
 
-    # Git clone your github fork using ssh (replace JulienPalard):
-    git clone git@github.com:JulienPalard/python-docs-fa.git
+    # کلون کردن فورک شما با توسط ssh (نام کاربری خودتان را با Username جایگزین کنید):
+    git clone git@github.com:Username/python-docs-fa.git
 
-    # Go to the cloned directory:
+    # به دایرکتوری کلون شده بروید:
     cd python-docs-fa/
 
-    # Add the upstream (the public repository) using HTTPS (won't ask for password):
+    # مخزن اصلی را توسط HTTPS اضافه کنید(رمز عبوری از شما نخواهد پرسید):
     git remote add upstream https://github.com/python/python-docs-fa.git
 
-All the translations must be made on the latest release.
-We never translate on an oldest version, by example, the latest python release
-is python 3.7, we don't want to translate directly on the python 3.5 release.
-If needed translations would be backported on the oldest versions by the
-`documentation team <https://www.python.org/dev/peps/pep-8015/#documentation-team>`_.
+تمام ترجمه ها باید در آخرین نسخه انجام شوند.
+ما هرگز بر روی قدیمی ترین نسخه، به عنوان مثال، آخرین نسخه پایتون ترجمه نمی کنیم
+پایتون 3.9 است، ما نمی خواهیم مستقیماً در نسخه 3.5 پایتون ترجمه کنیم.
+در صورت نیاز، ترجمه‌ها بر روی قدیمی‌ترین نسخه‌ها توسط سازمان پشتیبانی می‌شوند
+`تیم مستندسازی <https://www.python.org/dev/peps/pep-8015/#documentation-team>`_.
 
-Now you're ready to start a work session, each time you'll start a new task, start here:
+اکنون برای شروع یک جلسه کاری آماده هستید، هر بار که کار جدیدی را شروع می کنید، از اینجا شروع کنید:
 
 .. code-block:: bash
 
-    # To work, we'll need a branch, based on an up-to-date (freshly fetched)
-    # upstream/3.7 branch, let's say we'll work on glossary so we name
-    # the branch "glossary":
+    # برای کار، به یک شاخه بر اساس شاخه به‌روز (جدیدا fetch شده) نیاز داریم
+    # شاخه upstream/3.10، فرض کنید روی "glossary" کار می کنیم تا نام گذاری کنیم
+    # شاخه "glossary":
     git fetch upstream
     git checkout -b glossary upstream/3.7
 
-    # You can now work on the file, typically using poedit,
+    # اکنون می توانید روی فایل کار کنید.(معمولا از poedit استفاده میشود)
     poedit directory/file.po
 
-    # When everything is clear (syntax errors from Sphinx, html rendering,
-    # semantics, typography),
-    # you can commit your work with a nice explicit message:
+    # وقتی همه چیز واضح است (خطاهای نحوی از Sphinx، رندر html،
+    # معناشناسی، تایپوگرافی)،
+    # می توانید کار خود را با یک پیام صریح زیبا کامیت کنید:
     git commit -a -m "Working on glossary."
 
-    # Then push your modifications to your github clone,
-    # as they are ephemeral branches, let's not configure git to track them all,
-    # "origin HEAD" is a "special" syntax to say "Push on origin,
-    # on a branch with the same name as the local one",
-    # it's nice as it's exactly what we want:
+    # سپس تغییرات خود را به کلون github خود پوش کنید،
+    # چون شاخه های زودگذر هستند، اجازه دهید git را برای ردیابی همه آنها پیکربندی نکنیم،
+    # "origin HEAD" یک نحو "ویژه" برای گفتن "Push on origin" است،
+    # در شاخه ای با همان نام محلی،"
+    # خوب است زیرا دقیقاً همان چیزی است که ما می خواهیم:
     git push origin HEAD
 
-    # The previous command will print you a link to open a PR on github.
-    # If you missed it, just go to
-    # https://github.com/python/python-docs-fa/ and a nice "Compare & pull request"
-    # button should appear after a few seconds telling you can ask for a pull request.
+    # دستور قبلی یک پیوند برای باز کردن روابط عمومی در github برای شما چاپ می کند.
+    # اگر آن را از دست دادید، فقط به آن بروید
+    # https://github.com/mmdbalkhi/python-docs-fa/ و یک "درخواست مقایسه و کشش" خوب
+    دکمه # باید بعد از چند ثانیه ظاهر شود و به شما بگوید می‌توانید درخواست کشش کنید.
 
-    # Now someone is reviewing your modifications, and you'll want to fix their
-    # findings, get back to your branch
-    # (in case you started something else on another branch):
+    # اکنون شخصی در حال بررسی تغییرات شما است و شما می خواهید آنها را اصلاح کنید
+    # یافته ها، به شعبه خود بازگردید
+    # (در صورتی که کار دیگری را در شاخه دیگری شروع کرده باشید):
     git checkout glossary
-    # Fix the issues, then commit again:
+    # مشکلات را برطرف کنید، سپس دوباره متعهد شوید:
     git commit -a -m "glossary: small fixes."
     git push origin HEAD
-
 
 You may have noted that this looks like a triangle, with a missing segment:
 
